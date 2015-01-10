@@ -73,7 +73,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -85,6 +84,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,12 +361,13 @@
       <updated>1420895575934</updated>
       <workItem from="1420895577411" duration="599000" />
       <workItem from="1420911226250" duration="313000" />
-      <workItem from="1420911544875" duration="146000" />
+      <workItem from="1420911544875" duration="224000" />
+      <workItem from="1420911788149" duration="64000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1058000" />
+    <option name="totallyTimeSpent" value="1200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
