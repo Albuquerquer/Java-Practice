@@ -1,7 +1,7 @@
 public class ArrayVector
 {
-    private double[] arrVect = {67, 67, 172, 1, 89, 55};
-    private double[] anotherVector = {6, 3, 7};
+    private static double[] arrVect = {67, 67, 172, 1, 89, 55};
+    private static double[] anotherVector = {6, 3, 7};
 
     public double getElement(int i)
     {
@@ -42,7 +42,7 @@ public class ArrayVector
 
     public double getNorm()
     {
-        return Math.sqrt(scalarMult());
+        return Math.sqrt(Vectors.scalarMult());
     }
 
     public void sort()
@@ -64,39 +64,6 @@ public class ArrayVector
         }
     }
 
-    public void sum()
-    {
-        double[] sumVect = new double[3];
-        System.out.print("Сложение векторов arrVect и anotherVector: ");
-        for (int i = 0; i < arrVect.length; i++)
-        {
-            sumVect[i] = arrVect[i] + anotherVector[i];
-            System.out.print(sumVect[i] + " ");
-        }
-        System.out.println();
-    }
-
-    public void mult(int multer)
-    {
-        System.out.print("Вектор arrVect, умноженный на " + multer + ": ");
-        for (int i = 0; i < arrVect.length; i++)
-        {
-            arrVect[i] = multer * arrVect[i];
-            System.out.print(arrVect[i] + " ");
-        }
-    }
-
-    public double scalarMult()
-    {
-        double scalVect = 0;
-        for (int i = 0; i < arrVect.length; i++)
-        {
-            scalVect += arrVect[i] * anotherVector[i];
-        }
-        System.out.println();
-        return scalVect;
-    }
-
     public static void main(String[] args)
     {
         ArrayVector vector = new ArrayVector();
@@ -106,9 +73,9 @@ public class ArrayVector
         System.out.println("Минимальный элемент массива arrVect: " + vector.getMin());
         System.out.println("Длина массива arrVect: " + vector.getSize());
         System.out.println("Евклидова норма: " + vector.getNorm());
-        vector.sum();
-        vector.mult(5);
-        System.out.println("Скалярное произведение векторов arrVect и anotherVector: " + vector.scalarMult());
+        Vectors.sum();
+        Vectors.mult(5);
+        System.out.println("Скалярное произведение векторов arrVect и anotherVector: " + Vectors.scalarMult());
         vector.sort();
     }
 }
