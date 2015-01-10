@@ -1,0 +1,165 @@
+import java.util.Arrays;
+
+public class ArrayVector {
+
+    private double[] arrVect = {2, 5, 8};
+    private double[] anotherVector = {6, 3, 7};
+
+    /*public void ArrayVector()
+    {
+        for (int i = 1; i <= 10; i++)
+            arrVect[i] = i;
+    }
+
+    public void ArrayVector(int i)
+    {
+        for (i = 1; i <= 10; i++)
+            arrVect[i] = i;
+    }*/
+
+    public double getElement(int i)
+    {
+        return arrVect[i];
+    }
+
+    public double[] getArrVect()
+    {
+        return arrVect;
+    }
+
+    public void setElement(int index, double value)
+    {
+        this.arrVect[index] = value;
+    }
+
+    public void setArrVect(double[] newArrVect)
+    {
+        arrVect = newArrVect;
+    }
+
+    public double[] getAnotherVector()
+    {
+        return anotherVector;
+    }
+
+    public void setAnotherVector(double[] anotherVector)
+    {
+        this.anotherVector = anotherVector;
+    }
+
+    public double getMax()
+    {
+        double max = 0;
+        for (int i = 0; i < arrVect.length; i++)
+        {
+            if (arrVect[i] > max)
+                max = arrVect[i];
+        }
+        return max;
+    }
+
+    public double getMin()
+    {
+        double min = Double.MAX_VALUE ;
+        System.out.println("Максимальный элемент массива arrVect: " + min);
+        for (int i = 0; i < 3; i++)
+        {
+            if (arrVect[i] < min)
+                min = arrVect[i];
+        }
+        System.out.println("Минимальный элемент массива arrVect: " + min);
+        return min;
+    }
+
+    public double getSize()
+    {
+        System.out.println("Длина массива arrVect: " + arrVect.length);
+        return arrVect.length;
+    }
+
+    public double getNorm()
+    {
+        double res = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            res += arrVect[i] * arrVect[i];
+        }
+        //res
+        System.out.println("Евклидова норма вектора arrVect: " + Math.sqrt(res));
+        return Math.sqrt(res);
+    }
+
+    public void sort()
+    {
+        for (int i = arrVect.length - 1; i >= 2; i--)
+        {
+            boolean sorted = true;
+                for (int j = 0; j < i; j++)
+                {
+                    if (arrVect[j] > arrVect[j+1])
+                    {
+                    double temp = arrVect[j];
+                    arrVect[j] = arrVect[j+1];
+                    arrVect[j+1] = temp;
+                    sorted = false;
+                }
+            }
+            if(sorted)
+            {
+                break;
+            }
+        }
+    }
+
+
+    public void sum()
+    {
+        double[] sumVect = new double[3];
+        System.out.print("Сложение векторов arrVect и anotherVector: ");
+        for (int i = 0; i < 3; i++)
+        {
+            sumVect[i] = arrVect[i] + anotherVector[i];
+            System.out.print(sumVect[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public void mult()
+    {
+        double multer = 3;
+        System.out.print("Вектор arrVect, умноженный на 3: " + multer);
+        for (int i = 0; i < 3; i++)
+        {
+            arrVect[i] = multer * arrVect[i];
+            System.out.print(arrVect[i] + " ");
+        }
+        System.out.println("");
+    }
+
+    public void scalarMult()
+    {
+        double[] scalVect = new double[3];
+        System.out.print("Скалярное произведение векторов arrVect и anotherVector: ");
+        for (int i = 0; i < 3; i++)
+        {
+            scalVect[i] = arrVect[i] * anotherVector[i];
+            System.out.print(scalVect[i] + " ");
+        }
+        System.out.println("");
+    }
+
+    public static void main(String[] args)
+    {
+        ArrayVector vector = new ArrayVector();
+        vector.getMax();
+        //vector.setElement(3,5);
+        vector.getMin();
+        vector.getSize();
+        vector.getNorm();
+        vector.sum();
+        vector.mult();
+        vector.scalarMult();
+        vector.sort();
+        System.out.println(Arrays.toString(vector.arrVect));
+    }
+}

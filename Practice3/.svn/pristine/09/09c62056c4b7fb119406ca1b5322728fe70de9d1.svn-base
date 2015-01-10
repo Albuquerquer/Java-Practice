@@ -1,0 +1,123 @@
+public class ArrayVector {
+
+    private double[] arrVect = new double[10];
+
+    public void ArrayVector()
+    {
+        for (int i = 1; i <= 10; i++)
+            arrVect[i] = i;
+    }
+
+    public void ArrayVector(int i)
+    {
+        for (i = 1; i <= 10; i++)
+            arrVect[i] = i;
+    }
+
+    public double getSize()
+    {
+        return arrVect.length;
+    }
+
+    public double[] get()
+        {
+        return arrVect;
+    }
+
+    public double get(int index)
+    {
+        return arrVect[index];
+    }
+
+    public double[] getArrVect() {
+        return arrVect;
+    }
+
+    public void setArrVect(double[] newArrVect) {
+        arrVect = newArrVect;
+    }
+
+    public void set(int index, double value)
+    {
+        this.arrVect[2] = 4;
+    }
+
+    public double getMax()
+    {
+        double max = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            if (arrVect[i] > max)
+                max = arrVect[i];
+        }
+        return max;
+    }
+
+    public double getMin()
+    {
+        double min = getMax();
+        for (int i = 0; i < 10; i++)
+        {
+            if (arrVect[i] < min)
+                min = arrVect[i];
+        }
+        return min;
+    }
+
+    public double getNorm()
+    {
+        double res = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            res += arrVect[i]*arrVect[i];
+        }
+        return Math.sqrt(res);
+    }
+
+    public void sort()
+    {
+        for (int i = arrVect.length - 1; i >= 2; i--)
+        {
+            boolean sorted = true;
+                for (int j = 0; j < i; j++)
+                {
+                    if (arrVect[j] > arrVect[j+1])
+                    {
+                    double temp = arrVect[j];
+                    arrVect[j] = arrVect[j+1];
+                    arrVect[j+1] = temp;
+                    sorted = false;
+                }
+            }
+            if(sorted) {
+                break;
+            }
+        }
+    }
+
+
+    public double sum()
+    {
+1
+    }
+
+    public double mult()
+    {
+
+    }
+
+    public double scalarMult()
+    {
+
+    }
+
+    public static void main(String[] args) {
+        ArrayVector vector = new ArrayVector();
+        vector.getMax();
+        vector.getMin();
+        vector.getSize();
+        vector.getNorm();
+
+        System.out.println(vector.getSize());
+    }
+}
