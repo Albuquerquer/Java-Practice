@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="myjar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Practice1/src/myjar.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
